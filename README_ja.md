@@ -49,15 +49,15 @@ $ sudo chmod 755 /usr/local/bin/docker-compose
 以下のコマンドを入力して、このレポジトリをクローンしてください。
 
 ```sh
-$ git clone --recursive https://github.com/hsr-project/tmc_wrs_docker.git
-$ cd tmc_wrs_docker
+$ git clone --recursive https://github.com/hsr-project/hsrb_robocup_dspl_docker.git
+$ cd hsrb_robocup_dspl_docker
 ```
 
 シミュレータの実行に必要な各イメージをダウンロードします。
 大量のデータをダウンロードするので、高速なネットワーク回線に接続した環境で実行してください。
 
 ```sh
-$ ./pull-images.sh
+$ docker-compose pull
 ```
 
 シミュレータの起動
@@ -100,18 +100,6 @@ $ docker-compose -f docker-compose.nvidia.yml up
 - シミュレータ画面　http://localhost:3000
 - IDE http://localhost:3001
 - jupyter notebook http://localhost:3002
-
-自律移動の実行
----------------
-
-シミュレータ画面上のgazeboで、再生ボタン(左下の右矢印)をクリックしてシミュレーションを開始し、
-IDE上の画面下のターミナルにて、下記コマンドでrvizを起動してください。
-
-```
-rviz -d $(rospack find hsrb_rosnav_config)/launch/hsrb.rviz
-```
-
-rvizはシミュレータ画面上に表示されます。rviz上の「2D Nav Goal」をクリックし、自律移動のゴールをクリックすると目的の場所まで自律移動します。
 
 dockerのhost PCでの操作
 ---------------

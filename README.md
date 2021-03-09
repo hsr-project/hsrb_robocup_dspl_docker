@@ -50,8 +50,8 @@ Usage
 Please input the following commands to clone this repository.
 
 ```sh
-$ git clone --recursive https://github.com/hsr-project/tmc_wrs_docker.git
-$ cd tmc_wrs_docker
+$ git clone --recursive https://github.com/hsr-project/hsrb_robocup_dspl_docker.git
+$ cd hsrb_robocup_dspl_docker
 ```
 
 Download all of the images necessary for running the simulator.
@@ -59,7 +59,7 @@ As you will be downloading a large amount of data,
 please execute the following command in an environment that is connected to a high speed network.
 
 ```sh
-$ ./pull-images.sh
+$ docker-compose pull
 ```
 
 Starting the simulator
@@ -104,20 +104,6 @@ Please open each of the following URLs in a browser, then move on to development
 - The simulator's screen http://localhost:3000
 - IDE http://localhost:3001
 - jupyter notebook http://localhost:3002
-
-Running autonomous movement
-----------------------------
-
-In gazebo in the simulator's screen, click the play button (the right facing arrow in the lower left of the screen), and start the simulation.
-Into the terminal of the IDE screen, please input the following command to start rviz:
-
-```
-rviz -d $(rospack find hsrb_rosnav_config)/launch/hsrb.rviz
-```
-
-rviz will appear in the simulator's screen.
-If you click "2D Nav Goal" in rviz and click the autonomous movement goal,
-then the HSR will move autonomously to the goal location.
 
 Operation within the docker host PC
 -----------------------------------
